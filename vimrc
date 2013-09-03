@@ -1,0 +1,54 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle package management setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tomasr/molokai'
+
+filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_user_command =
+  \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+let g:ctrlp_extensions =
+  \ ['buffertag']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Molokai color scheme setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:rehash256 = 1
+set background=dark
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set ignorecase smartcase
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set smartindent
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mapping setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Swap : and ;
+nnoremap ; :
+nnoremap : ;
+
+" Key combinations which exit insert mode
+imap jj <Esc>
+imap jk <Esc>
+imap kk <Esc>
+imap kj <Esc>
