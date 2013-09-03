@@ -10,6 +10,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tomasr/molokai'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
