@@ -18,10 +18,14 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_user_command =
-  \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
 let g:ctrlp_extensions =
-  \ ['buffertag']
+  \ ['tag', 'buffertag', 'quickfix', 'dir']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Molokai color scheme setup
