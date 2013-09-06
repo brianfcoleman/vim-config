@@ -64,7 +64,7 @@ inoremap kj <Esc>
 inoremap <F5> <Esc>A;<Esc>
 
 " Delimiter pairs
-inoremap <F6> {<NL>}<Esc>O
+inoremap <F6> {}<Esc>i
 inoremap <F7> ()<Esc>i
 inoremap <F8> []<Esc>i
 inoremap <F9> <><Esc>i
