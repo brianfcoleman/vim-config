@@ -54,7 +54,16 @@ nnoremap ; :
 nnoremap : ;
 
 " Key combinations which exit insert mode
-imap jj <Esc>
-imap jk <Esc>
-imap kk <Esc>
-imap kj <Esc>
+inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
+inoremap kj <Esc>
+
+" C-like syntax statemant completion
+inoremap <F5> <Esc>A;<Esc>
+
+" Delimiter pairs
+inoremap <F6> {<NL>}<Esc>O
+inoremap <F7> ()<Esc>i
+inoremap <F8> []<Esc>i
+inoremap <F9> <><Esc>i
