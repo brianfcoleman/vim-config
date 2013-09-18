@@ -27,6 +27,7 @@ let g:ctrlp_user_command = {
 let g:ctrlp_extensions =
   \ ['tag', 'buffertag', 'quickfix', 'dir']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:32,results:32'
+let g:ctrlp_clear_cache_on_exit = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Molokai color scheme setup
