@@ -62,10 +62,10 @@ inoremap kk <Esc>
 inoremap kj <Esc>
 
 " C-like syntax statemant completion
-inoremap hh <Esc>A;<Esc>
+inoremap <Space><Space>l <Esc>A;<Esc>
 
 " Delimiter pairs
-inoremap ff {}<Esc>i
-inoremap dd ()<Esc>i
-inoremap gg []<Esc>i
-inoremap ss <><Esc>i
+inoremap <Space><Space>f {}<Esc>i
+inoremap <Space><Space>d ()<Esc>i
+inoremap <Space><Space>s []<Esc>i
+inoremap <Space><Space>a <><Esc>i
