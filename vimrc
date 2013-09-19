@@ -32,6 +32,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Molokai color scheme setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
 let g:rehash256 = 1
 set background=dark
 
