@@ -50,9 +50,9 @@ set softtabstop=2
 set expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Save setup
+" Strip trailing whitespace when writing a buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufWritePre * :%s/\s\+$//
+autocmd BufWritePre * :silent! %s/\s\+$//
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mapping setup
