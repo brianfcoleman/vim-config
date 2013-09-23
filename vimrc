@@ -74,10 +74,10 @@ inoremap <Space><Space>s []<Esc>i
 inoremap <Space><Space>a <><Esc>i
 
 " CtrlP keybindings
-nnoremap <Space>jf :CtrlP<CR>
-nnoremap <Space>jB :CtrlPBuffer<CR>
-nnoremap <Space>jm :CtrlPMRU<CR>
-nnoremap <Space>jt :CtrlPTag<CR>
-nnoremap <Space>jb :CtrlPBufTag<CR>
-nnoremap <Space>jq :CtrlPQuickfix<CR>
-nnoremap <Space>jd :CtrlPDir<CR>
+nnoremap <Space>f :CtrlP<CR>
+nnoremap <Space>B :CtrlPBuffer<CR>
+nnoremap <Space>m :CtrlPMRU<CR>
+nnoremap <Space>t :CtrlPTag<CR>
+nnoremap <Space>b :CtrlPBufTag<CR>
+nnoremap <Space>q :CtrlPQuickfix<CR>
+nnoremap <Space>d :CtrlPDir<CR>
