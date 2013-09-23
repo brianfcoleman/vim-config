@@ -61,12 +61,6 @@ autocmd BufWritePre * :silent! %s/\s\+$//
 nnoremap ; :
 nnoremap : ;
 
-" Key combinations which exit insert mode
-inoremap jj <Esc>
-inoremap jk <Esc>
-inoremap kk <Esc>
-inoremap kj <Esc>
-
 " C-like syntax statemant completion
 inoremap <Space><Space>l <Esc>A;<Esc>
 
