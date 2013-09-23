@@ -8,13 +8,22 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tomasr/molokai'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'brianfcoleman/ctrlp.vim'
+Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'sickill/vim-monokai'
 
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax enable
+set t_Co=256
+set background=dark
+colorscheme Monokai
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
@@ -29,13 +38,6 @@ let g:ctrlp_extensions =
   \ ['tag', 'buffertag', 'quickfix', 'dir']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:32,results:32'
 let g:ctrlp_clear_cache_on_exit = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Solarized color scheme setup
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable
-set background=dark
-colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search setup
