@@ -12,6 +12,7 @@ Bundle 'tomasr/molokai'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'brianfcoleman/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -30,11 +31,11 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:32,results:32'
 let g:ctrlp_clear_cache_on_exit = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Molokai color scheme setup
+" Solarized color scheme setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-let g:rehash256 = 1
+syntax enable
 set background=dark
+colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search setup
