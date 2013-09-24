@@ -89,6 +89,12 @@ iab MM !=
 " Punctuation
 iab nn _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 
+" Arrow key alternative mapping
+noremap <M-H> <Left>
+noremap <M-J> <Down>
+noremap <M-K> <Up>
+noremap <M-L> <Right>
+
 " CtrlP keybindings
 nnoremap <Space>f :CtrlP<CR>
 nnoremap <Space>B :CtrlPBuffer<CR>
