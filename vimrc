@@ -65,13 +65,19 @@ nnoremap ; :
 nnoremap : ;
 
 " C-like syntax statemant completion
-inoremap <Space><Space>l <Esc>A;<Esc>
+iab kk <Esc>A;<Esc>
 
 " Delimiter pairs
-inoremap <Space><Space>f {}<Esc>i
-inoremap <Space><Space>d ()<Esc>i
-inoremap <Space><Space>s []<Esc>i
-inoremap <Space><Space>a <><Esc>i
+func EatWhiteSpace()
+  let c = nr2char(getchar(0))
+  return (c =~ '\s') ? '' : c
+endfunc
+
+iab jj {}<Left><C-R>=EatWhiteSpace()<CR>
+iab ff ()<Left><C-R>=EatWhiteSpace()<CR>
+iab dd ()<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+iab ss []<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+iab aa <><Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 
 " CtrlP keybindings
 nnoremap <Space>f :CtrlP<CR>
