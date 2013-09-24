@@ -67,17 +67,25 @@ nnoremap : ;
 " C-like syntax statemant completion
 iab kk <Esc>A;<Esc>
 
-" Delimiter pairs
+" Remove the character underneath the cursor if it is a space
 func EatWhiteSpace()
   let c = nr2char(getchar(0))
   return (c =~ '\s') ? '' : c
 endfunc
 
+" Delimiter pairs
 iab jj {}<Left><C-R>=EatWhiteSpace()<CR>
 iab ff ()<Left><C-R>=EatWhiteSpace()<CR>
 iab dd ()<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 iab ss []<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 iab aa <><Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+
+" Binary operators
+iab hh =
+iab gg +
+
+" Punctuation
+iab nn _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 
 " CtrlP keybindings
 nnoremap <Space>f :CtrlP<CR>
