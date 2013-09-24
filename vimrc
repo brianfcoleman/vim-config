@@ -83,6 +83,8 @@ iab aa <><Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 " Binary operators
 iab hh =
 iab gg +
+iab mm ==
+iab MM !=
 
 " Punctuation
 iab nn _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
