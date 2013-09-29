@@ -15,6 +15,8 @@ Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sickill/vim-monokai'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'dasch/vim-mocha'
+Bundle 'ciaranm/inkpot'
 
 filetype plugin indent on
 
@@ -24,7 +26,6 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme vividchalk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
