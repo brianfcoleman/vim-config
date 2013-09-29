@@ -28,6 +28,11 @@ set t_Co=256
 set background=dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CommandT setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp^=~/.vim/command-t
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_user_command = {
@@ -108,8 +113,9 @@ noremap <M-J> <Down>
 noremap <M-K> <Up>
 noremap <M-L> <Right>
 
+" CommandT keybindings
+nnoremap <Space>f :CommandT<CR>
 " CtrlP keybindings
-nnoremap <Space>f :CtrlP<CR>
 nnoremap <Space>B :CtrlPBuffer<CR>
 nnoremap <Space>m :CtrlPMRU<CR>
 nnoremap <Space>t :CtrlPTag<CR>
