@@ -66,11 +66,13 @@ nnoremap ; :
 nnoremap : ;
 
 " Exit insert mode
+inoremap jj <Esc>
 inoremap jk <Esc>
+inoremap kk <Esc>
 inoremap kj <Esc>
 
 " C-like syntax statemant completion
-iab kk <Esc>A;<Esc>
+iab mm <Esc>A;<Esc>
 
 " Remove the character underneath the cursor if it is a space
 func EatWhiteSpace()
@@ -79,20 +81,24 @@ func EatWhiteSpace()
 endfunc
 
 " Delimiter pairs
-iab jj {}<Left><C-R>=EatWhiteSpace()<CR>
-iab ff ()<Left><C-R>=EatWhiteSpace()<CR>
+iab ff {}<Left><C-R>=EatWhiteSpace()<CR>
+iab FF {}<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 iab dd ()<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+iab DD ()<Left><C-R>=EatWhiteSpace()<CR>
 iab ss []<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 iab aa <><Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+iab rr ""<Left><C-R>=EatWhiteSpace()<CR>
+iab RR ''<Left><C-R>=EatWhiteSpace()<CR>
 
 " Binary operators
-iab hh =
-iab gg +
-iab mm ==
-iab MM !=
+iab uu =
+iab ii ==
+iab II !=
+iab oo +
+iab OO -
 
 " Punctuation
-iab nn _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
+iab ee _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
 
 " Arrow key alternative mapping
 noremap <M-H> <Left>
