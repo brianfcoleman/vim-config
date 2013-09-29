@@ -14,6 +14,7 @@ Bundle 'brianfcoleman/ctrlp.vim'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sickill/vim-monokai'
+Bundle 'tpope/vim-vividchalk'
 
 filetype plugin indent on
 
@@ -23,7 +24,7 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme Monokai
+colorscheme vividchalk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
@@ -63,6 +64,10 @@ autocmd BufWritePre * :silent! %s/\s\+$//
 " Swap : and ;
 nnoremap ; :
 nnoremap : ;
+
+" Exit insert mode
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " C-like syntax statemant completion
 iab kk <Esc>A;<Esc>
