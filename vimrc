@@ -8,15 +8,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'msanders/snipmate.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'brianfcoleman/ctrlp.vim'
-Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'sickill/vim-monokai'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'dasch/vim-mocha'
-Bundle 'ciaranm/inkpot'
+Bundle 'brianfcoleman/snipmate.vim'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
