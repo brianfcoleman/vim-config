@@ -126,3 +126,7 @@ nnoremap <Space>t :CtrlPTag<CR>
 nnoremap <Space>b :CtrlPBufTag<CR>
 nnoremap <Space>q :CtrlPQuickfix<CR>
 nnoremap <Space>d :CtrlPDir<CR>
+
+" C++ indentation
+" Don't indent within a namespace block
+set cino=N-s
