@@ -113,6 +113,10 @@ noremap <M-J> <Down>
 noremap <M-K> <Up>
 noremap <M-L> <Right>
 
+" Omni complete keybinding
+inoremap <F8> <C-P>
+inoremap <F9> <C-X><C-O>
+
 " CommandT keybindings
 nnoremap <Space>f :CommandT<CR>
 " CtrlP keybindings
