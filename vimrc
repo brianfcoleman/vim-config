@@ -25,6 +25,7 @@ set background=dark
 " CommandT setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp^=~/.vim/command-t
+let g:CommandTMaxCachedDirectories = 8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
