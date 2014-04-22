@@ -72,53 +72,15 @@ inoremap jk <Esc>
 inoremap kk <Esc>
 inoremap kj <Esc>
 
-" C-like syntax statemant completion
-iab mm <Esc>A;<Esc>
-
-" Remove the character underneath the cursor if it is a space
-func EatWhiteSpace()
-  let c = nr2char(getchar(0))
-  return (c =~ '\s') ? '' : c
-endfunc
-
-" Delimiter pairs
-iab ff {}<Left><C-R>=EatWhiteSpace()<CR>
-iab FF {}<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
-iab dd ()<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
-iab DD ()<Left><C-R>=EatWhiteSpace()<CR>
-iab ss []<Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
-iab aa <><Left><Left><BS><Right><C-R>=EatWhiteSpace()<CR>
-iab rr ""<Left><C-R>=EatWhiteSpace()<CR>
-iab RR ''<Left><C-R>=EatWhiteSpace()<CR>
-
-" Binary operators
-iab uu =
-iab ii ==
-iab II !=
-iab oo +
-iab OO -
-
-" Punctuation
-iab ee _<Left><BS><Right><C-R>=EatWhiteSpace()<CR>
-
-" Arrow key alternative mapping
-noremap <M-H> <Left>
-noremap <M-J> <Down>
-noremap <M-K> <Up>
-noremap <M-L> <Right>
-
-" Omni complete keybinding
-inoremap <F8> <C-P>
-inoremap <F9> <C-X><C-O>
-
 " CtrlP keybindings
-nnoremap <Space>f :CtrlP<CR>
-nnoremap <Space>B :CtrlPBuffer<CR>
-nnoremap <Space>m :CtrlPMRU<CR>
-nnoremap <Space>t :CtrlPTag<CR>
-nnoremap <Space>b :CtrlPBufTag<CR>
-nnoremap <Space>q :CtrlPQuickfix<CR>
-nnoremap <Space>d :CtrlPDir<CR>
+let mapleader = "\<Space>"
+nnoremap <Leader>f :CtrlP<CR>
+nnoremap <Leader>B :CtrlPBuffer<CR>
+nnoremap <Leader>m :CtrlPMRU<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
+nnoremap <Leader>b :CtrlPBufTag<CR>
+nnoremap <Leader>q :CtrlPQuickfix<CR>
+nnoremap <Leader>d :CtrlPDir<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
