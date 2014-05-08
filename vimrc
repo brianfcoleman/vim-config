@@ -62,6 +62,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase
 set smartcase
+set hlsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent setup
