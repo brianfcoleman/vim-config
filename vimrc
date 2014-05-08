@@ -73,6 +73,12 @@ set softtabstop=2
 set expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ruler
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let &colorcolumn = join(range(81,999),",")
+highlight ColorColumn ctermbg=233
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip trailing whitespace when writing a buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * :silent! %s/\s\+$//
