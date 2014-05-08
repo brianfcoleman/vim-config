@@ -9,8 +9,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'brianfcoleman/ctrlp.vim'
-Bundle 'brianfcoleman/snipmate.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'wincent/Command-T'
+Bundle 'ervandew/ag'
+Bundle 'ervandew/supertab'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 
 filetype plugin indent on
 
@@ -33,8 +39,23 @@ let g:ctrlp_user_command = {
   \ }
 let g:ctrlp_extensions =
   \ ['tag', 'buffertag', 'quickfix', 'dir']
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:32,results:32'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:48,results:48'
 let g:ctrlp_clear_cache_on_exit = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CommandT setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" These values are sufficient for the Androis Open Source Project
+let g:CommandTMaxFiles = 524288
+let g:CommandTMaxDepth = 20
+let g:CommandTMaxCachedDirectories = 4
+let g:CommandTFileScanner = 'watchman'
+let g:CommandTMatchWindowAtTop = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SuperTab setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = 'context'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search setup
@@ -73,15 +94,16 @@ inoremap jk <Esc>
 inoremap kk <Esc>
 inoremap kj <Esc>
 
-" CtrlP keybindings
+" Leader keybindings
 let mapleader = "\<Space>"
-nnoremap <Leader>f :CtrlP<CR>
-nnoremap <Leader>B :CtrlPBuffer<CR>
+nnoremap <Leader>f :CommandT<CR>
+nnoremap <Leader>B :CommandTBuffer<CR>
 nnoremap <Leader>m :CtrlPMRU<CR>
-nnoremap <Leader>t :CtrlPTag<CR>
+nnoremap <Leader>t :CommandTTag<CR>
 nnoremap <Leader>b :CtrlPBufTag<CR>
 nnoremap <Leader>q :CtrlPQuickfix<CR>
 nnoremap <Leader>d :CtrlPDir<CR>
+nnoremap <Leader>j :CommandTJump<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
