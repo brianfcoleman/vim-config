@@ -105,6 +105,7 @@ nnoremap <Leader>b :CtrlPBufTag<CR>
 nnoremap <Leader>q :CtrlPQuickfix<CR>
 nnoremap <Leader>d :CtrlPDir<CR>
 nnoremap <Leader>j :CommandTJump<CR>
+nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
