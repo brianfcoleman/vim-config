@@ -45,11 +45,11 @@ let g:ctrlp_clear_cache_on_exit = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CommandT setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" These values are sufficient for the Androis Open Source Project
+" These values are sufficient for the Android Open Source Project
 let g:CommandTMaxFiles = 524288
 let g:CommandTMaxDepth = 20
-let g:CommandTMaxCachedDirectories = 4
-let g:CommandTFileScanner = 'watchman'
+let g:CommandTMaxCachedDirectories = 16
+let g:CommandTFileScanner = 'find'
 let g:CommandTMatchWindowAtTop = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
