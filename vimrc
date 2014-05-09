@@ -114,6 +114,9 @@ nnoremap <Leader>b :CtrlPBufTag<CR>
 nnoremap <Leader>q :CtrlPQuickfix<CR>
 nnoremap <Leader>d :CtrlPDir<CR>
 nnoremap <Leader>j :CommandTJump<CR>
+nnoremap <Leader>g <C-]>
+nnoremap <Leader>G g]
+nnoremap <Leader>b <C-t>
 nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
 
 " C++ indentation
