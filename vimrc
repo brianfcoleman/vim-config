@@ -72,6 +72,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+" Java indentation
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruler
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
