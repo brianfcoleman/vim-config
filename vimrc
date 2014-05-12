@@ -79,7 +79,7 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 " Ruler
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &colorcolumn = join(range(81,999),",")
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=233 ctermfg=15
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip trailing whitespace when writing a buffer
