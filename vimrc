@@ -18,6 +18,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/camelcasemotion'
+Bundle 'jnurmine/Zenburn'
 
 filetype plugin indent on
 
@@ -27,6 +28,16 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('gui_running')
+  colors zenburn
+endif
+if has('gui_macvim')
+  set guifont=Menlo:h14
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
