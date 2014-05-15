@@ -62,7 +62,6 @@ let g:SuperTabDefaultCompletionType = 'context'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase
 set smartcase
-set hlsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent setup
@@ -129,6 +128,7 @@ nnoremap <Leader>j :CommandTJump<CR>
 nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
 nnoremap <Leader>b <C-t>
+nnoremap <Leader>h :set invhlsearch<CR>
 nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
 
 " C++ indentation
