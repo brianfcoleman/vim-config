@@ -128,7 +128,7 @@ nnoremap <Leader>d :CtrlPDir<CR>
 nnoremap <Leader>j :CommandTJump<CR>
 nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
-nnoremap <Leader>b <C-t>
+nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :set invhlsearch<CR>
 nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
 
