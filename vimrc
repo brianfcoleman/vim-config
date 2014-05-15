@@ -79,19 +79,19 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 " Ruler
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function BCSetColorColumn(...)
-  let fileType = ""
+  let fileType = ''
   if a:0 == 1
     let fileType = a:1
   endif
-  let columnByFileType = { "java": 101 }
+  let columnByFileType = { 'java': 101 }
   let defaultColumn = 81
   let column = get(columnByFileType, fileType, defaultColumn)
-  let &colorcolumn = join(range(column,999),",")
+  let &colorcolumn = join(range(column,999),',')
 endfunction
 
 highlight ColorColumn ctermbg=233 ctermfg=15
 call BCSetColorColumn()
-autocmd FileType java call BCSetColorColumn("java")
+autocmd FileType java call BCSetColorColumn('java')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip trailing whitespace when writing a buffer
