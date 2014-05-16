@@ -33,10 +33,14 @@ set background=dark
 " GUI setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
+  set guioptions-=T
   colors zenburn
 endif
 if has('gui_macvim')
   set guifont=Menlo:h14
+endif
+if has('gui_gtk')
+  set guifont=Liberation\ Mono\ 11
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
