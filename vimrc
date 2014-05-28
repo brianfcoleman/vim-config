@@ -89,6 +89,8 @@ set expandtab
 
 " Java indentation
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4
+" AIDL syntax highlighting
+autocmd BufNewFile,Bufread *.aidl set filetype=java
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruler
