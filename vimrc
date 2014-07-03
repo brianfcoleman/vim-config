@@ -18,6 +18,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/camelcasemotion'
+Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'jnurmine/Zenburn'
 
 filetype plugin indent on
@@ -28,6 +29,9 @@ filetype plugin indent on
 syntax enable
 set t_Co=256
 set background=dark
+
+" Use C++ syntax highlighting for header files
+autocmd BufNewFile,BufRead *.h setfiletype cpp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI setup
@@ -90,7 +94,7 @@ set expandtab
 " Java indentation
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 " AIDL syntax highlighting
-autocmd BufNewFile,Bufread *.aidl set filetype=java
+autocmd BufNewFile,BufRead *.aidl set filetype=java
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruler
@@ -133,6 +137,9 @@ inoremap jk <Esc>
 inoremap kk <Esc>
 inoremap kj <Esc>
 
+" Use m to enter commands
+nnoremap m :
+
 " Leader keybindings
 let mapleader = "\<Space>"
 nnoremap <Leader>f :CommandT<CR>
@@ -148,6 +155,7 @@ nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :set invhlsearch<CR>
 nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
+vnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
