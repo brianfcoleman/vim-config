@@ -4,7 +4,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/vimfiles/bundle/Vundle.vim/
+let path='~/vimfiles/bundle'
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
