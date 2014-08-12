@@ -6,21 +6,23 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
-call vundle#rc()
+call vundle#begin(path)
 
-Bundle 'gmarik/vundle'
-Bundle 'brianfcoleman/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'wincent/Command-T'
-Bundle 'ervandew/ag'
-Bundle 'ervandew/supertab'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'vim-scripts/camelcasemotion'
-Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'jnurmine/Zenburn'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'wincent/Command-T'
+Plugin 'ervandew/ag'
+Plugin 'ervandew/supertab'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/camelcasemotion'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'jnurmine/Zenburn'
+
+call vundle#end()
 
 filetype plugin indent on
 
