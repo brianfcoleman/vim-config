@@ -47,6 +47,9 @@ endif
 if has('gui_gtk')
   set guifont=Liberation\ Mono\ 11
 endif
+if has('gui_win32')
+  set guifont=Consolas:h12
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
