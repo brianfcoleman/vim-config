@@ -146,14 +146,14 @@ nnoremap m :
 
 " Leader keybindings
 let mapleader = "\<Space>"
-nnoremap <Leader>f :CommandT<CR>
-nnoremap <Leader>B :CommandTBuffer<CR>
+nnoremap <Leader>f :CtrlP<CR>
+nnoremap <Leader>B :CtrlPBuffer<CR>
 nnoremap <Leader>m :CtrlPMRU<CR>
-nnoremap <Leader>t :CommandTTag<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
 nnoremap <Leader>b :CtrlPBufTag<CR>
 nnoremap <Leader>q :CtrlPQuickfix<CR>
 nnoremap <Leader>d :CtrlPDir<CR>
-nnoremap <Leader>j :CommandTJump<CR>
+nnoremap <Leader>j :CtrlPQuickFix<CR>
 nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
