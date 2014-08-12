@@ -158,8 +158,8 @@ nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :set invhlsearch<CR>
-nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
-vnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
+nnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
+vnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
