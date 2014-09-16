@@ -41,7 +41,7 @@ autocmd BufNewFile,BufRead *.h setfiletype cpp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
   set guioptions-=T
-  colors zenburn
+  colors obsidian2
 endif
 if has('gui_macvim')
   set guifont=Menlo:h14
