@@ -116,7 +116,7 @@ function BCSetColorColumn(...)
   let &colorcolumn = join(range(column,999),',')
 endfunction
 
-highlight ColorColumn ctermbg=233 ctermfg=15
+highlight ColorColumn ctermbg=233 ctermfg=15 guifg=#eeeeee guibg=#222222
 call BCSetColorColumn()
 autocmd FileType java call BCSetColorColumn('java')
 
