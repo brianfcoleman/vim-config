@@ -133,18 +133,11 @@ set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mapping setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Swap : and ;
-nnoremap ; :
-nnoremap : ;
+" Enter ex command mode
+nnoremap <Space><Space> :
 
 " Exit insert mode
-inoremap jj <Esc>
-inoremap jk <Esc>
-inoremap kk <Esc>
-inoremap kj <Esc>
-
-" Use m to enter commands
-nnoremap m :
+inoremap <Space><Space> <Esc>
 
 " Leader keybindings
 let mapleader = "\<Space>"
