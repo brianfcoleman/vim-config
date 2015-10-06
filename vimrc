@@ -1,26 +1,27 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle package management setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
 filetype off
+set nocompatible
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin('~/vimfiles/bundle')
 
-Bundle 'gmarik/vundle'
-Bundle 'brianfcoleman/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'wincent/Command-T'
-Bundle 'ervandew/ag'
-Bundle 'ervandew/supertab'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'vim-scripts/camelcasemotion'
-Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'jnurmine/Zenburn'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'brianfcoleman/ctrlp.vim'
+Plugin 'wincent/command-t'
+Plugin 'ervandew/ag'
+Plugin 'ervandew/supertab'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/camelcasemotion'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'jnurmine/Zenburn'
 
+call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,6 +47,9 @@ endif
 if has('gui_gtk')
   set guifont=Liberation\ Mono\ 11
 endif
+if has('gui_win32')
+  set guifont=Consolas:h11
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setup
@@ -69,7 +73,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:CommandTMaxFiles = 524288
 let g:CommandTMaxDepth = 20
 let g:CommandTMaxCachedDirectories = 16
-let g:CommandTFileScanner = 'find'
+let g:CommandTFileScanner = 'git'
 let g:CommandTMatchWindowAtTop = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -154,9 +158,12 @@ nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :set invhlsearch<CR>
-nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
-vnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
+nnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
+vnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
 
 " C++ indentation
 " Don't indent within a namespace block
 set cino=N-s
+
+set ruler
+set number
