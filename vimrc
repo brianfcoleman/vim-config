@@ -4,8 +4,13 @@
 filetype off
 set nocompatible
 
-set rtp+=~/vimfiles/bundle/Vundle.vim
-call vundle#begin('~/vimfiles/bundle')
+if has('win32')
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+  call vundle#begin('~/vimfiles/bundle')
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -19,7 +24,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/camelcasemotion'
 Plugin 'vim-scripts/OmniCppComplete'
-Plugin 'jnurmine/Zenburn'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,7 +33,9 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 set t_Co=256
-set background=dark
+if !has('gui_running')
+  set background=dark
+endif
 
 " Use C++ syntax highlighting for header files
 autocmd BufNewFile,BufRead *.h setfiletype cpp
@@ -39,7 +45,7 @@ autocmd BufNewFile,BufRead *.h setfiletype cpp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
   set guioptions-=T
-  colors zenburn
+  colors default
 endif
 if has('gui_macvim')
   set guifont=Menlo:h14
@@ -118,7 +124,7 @@ highlight ColorColumn ctermbg=233 ctermfg=15
 call BCSetColorColumn()
 autocmd FileType java call BCSetColorColumn('java')
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip trailing whitespace when writing a buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * :silent! %s/\s\+$//
@@ -131,10 +137,6 @@ set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mapping setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Swap : and ;
-nnoremap ; :
-nnoremap : ;
-
 " Exit insert mode
 inoremap jj <Esc>
 inoremap jk <Esc>
@@ -158,12 +160,25 @@ nnoremap <Leader>g <C-]>
 nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :set invhlsearch<CR>
-nnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
-vnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
+if has('win32')
+  nnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
+  vnoremap <Leader>c :pyf ~/vimfiles/clang-format.py<CR>
+else
+  nnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
+  vnoremap <Leader>c :pyf ~/.vim/clang-format.py<CR>
+endif
 
 " C++ indentation
 " Don't indent within a namespace block
 set cino=N-s
 
+" Show line and column number in status bar
 set ruler
+" Show line numbers
 set number
+
+" Disable bell
+set noerrorbells
+set visualbell
+set t_vb=
+autocmd GUIEnter * set visualbell t_vb=
