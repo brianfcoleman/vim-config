@@ -46,6 +46,7 @@ autocmd BufNewFile,BufRead *.h setfiletype cpp
 if has('gui_running')
   set guioptions-=T
   colors default
+  set background=light
 endif
 if has('gui_macvim')
   set guifont=Menlo:h14
@@ -97,32 +98,27 @@ set smartcase
 " Indent setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set smartindent
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
-" Java indentation
-autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 " AIDL syntax highlighting
 autocmd BufNewFile,BufRead *.aidl set filetype=java
+" JavaScript Module syntax hightlighting
+autocmd BufNewFile,BufRead *.jsm set filetype=javascript
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruler
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function BCSetColorColumn(...)
-  let fileType = ''
-  if a:0 == 1
-    let fileType = a:1
-  endif
-  let columnByFileType = { 'java': 101 }
-  let defaultColumn = 81
-  let column = get(columnByFileType, fileType, defaultColumn)
-  let &colorcolumn = join(range(column,999),',')
-endfunction
+set colorcolumn=81,121
 
-highlight ColorColumn ctermbg=233 ctermfg=15
-call BCSetColorColumn()
-autocmd FileType java call BCSetColorColumn('java')
+" Don't wrap lines
+set nowrap
+
+" Show line and column number in status bar
+set ruler
+" Show line numbers
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip trailing whitespace when writing a buffer
@@ -171,11 +167,6 @@ endif
 " C++ indentation
 " Don't indent within a namespace block
 set cino=N-s
-
-" Show line and column number in status bar
-set ruler
-" Show line numbers
-set number
 
 " Disable bell
 set noerrorbells
