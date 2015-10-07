@@ -24,6 +24,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/camelcasemotion'
 Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'github-theme'
 
 call vundle#end()
 filetype plugin indent on
@@ -45,7 +46,7 @@ autocmd BufNewFile,BufRead *.h setfiletype cpp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
   set guioptions-=T
-  colors default
+  colors github
   set background=light
 endif
 if has('gui_macvim')
