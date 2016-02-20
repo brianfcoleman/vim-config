@@ -200,3 +200,8 @@ inoremap <silent> <expr> <CR> SelectCompletion()
 " Disable bell
 set noerrorbells
 set visualbell
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath+=~/opt/fzf
