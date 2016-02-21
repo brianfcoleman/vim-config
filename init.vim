@@ -152,12 +152,9 @@ function! TabComplete()
                 " mode. We can use <C-e> to exit omni-complete mode in this
                 " case.
                 return dismissMenuAndShowCompleteModePrev
-            elseif (b:TabCompleteMode == TabCompleteModePrev)
-                let b:TabCompleteMode = TabCompleteModeNext
-                return showCompleteModeNext
-            elseif (b:TabCompleteMode == TabCompleteModeNext)
-                let b:TabCompleteMode = TabCompleteModeOmni
-                return showCompleteModeOmni
+            else
+                let b:TabCompleteMode = TabCompleteModePrev
+                return showCompleteModePrev
             endif
         else
             if (b:TabCompleteMode == TabCompleteModeOmni)
@@ -167,10 +164,7 @@ function! TabComplete()
                 " case.
                 let b:TabCompleteMode = TabCompleteModePrev
                 return dismissMenuAndShowCompleteModePrev
-            elseif (b:TabCompleteMode == TabCompleteModePrev)
-                let b:TabCompleteMode = TabCompleteModeNext
-                return showCompleteModeNext
-            elseif (b:TabCompleteMode == TabCompleteModeNext)
+            else
                 let b:TabCompleteMode = TabCompleteModePrev
                 return showCompleteModePrev
             endif
