@@ -173,6 +173,9 @@ function! TabComplete()
 endfunction
 
 inoremap <silent> <expr> <Tab> TabComplete()
+inoremap <S-Tab> <C-d>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
 
 " When Enter is pressed and the popup menu is visible select the current
 " completion. Otherwise insert a newline.
