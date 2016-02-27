@@ -89,7 +89,7 @@ nnoremap <Leader>h :nohlsearch<CR>
 " Menu keybindings
 
 " A buffer local variable storing the current tab completion mode
-let b:TabCompleteMode = 0
+autocmd BufEnter * let b:TabCompleteMode = 0
 
 " When tab is pressed dismiss the current completion menu if it is visible.
 " Cycle between omni-complete, previous match completion and next match
