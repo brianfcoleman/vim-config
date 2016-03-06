@@ -7,7 +7,7 @@ syntax enable
 set background=dark
 
 " C++ header syntax highlighting
-autocmd BufNewFile,BufRead *.h setfiletype cpp
+autocmd BufNewFile,BufRead *.h set filetype=cpp
 " AIDL syntax highlighting
 autocmd BufNewFile,BufRead *.aidl set filetype=java
 " JavaScript Module syntax hightlighting
@@ -25,6 +25,15 @@ set expandtab
 " C++ indentation
 " Don't indent within a namespace block
 set cino=N-s
+
+" Go indentation
+function! SetupGoIndentation()
+    set shiftwidth=0
+    set softtabstop=0
+    set tabstop=4
+    set noexpandtab
+endfunction
+autocmd BufNewFile,BufRead *.go call SetupGoIndentation()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search setup

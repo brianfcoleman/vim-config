@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rsync -av init.vim $HOME/.config/nvim/init.vim
+
