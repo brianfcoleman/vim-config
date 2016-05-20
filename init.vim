@@ -217,10 +217,15 @@ set noerrorbells
 set visualbell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP setup
+" ctrlp.vim setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_match_window = 'max:48'
 let g:ctrlp_max_files = 262144
 let g:ctrlp_max_depth = 128
 let g:ctrlp_user_command = ['.git', 'cd /d %s && git ls-files']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-sneak setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:sneak#streak = 1
 
