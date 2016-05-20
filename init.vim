@@ -1,10 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin paths
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath^=$LocalAppData/nvim/bundle/ctrlp.vim,$LocalAppData/nvim/bundle/vim-fugitive,$LocalAppData/nvim/bundle/vim-sneak
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin indent on
 syntax enable
-set background=dark
+set background=light
 
 " C++ header syntax highlighting
 autocmd BufNewFile,BufRead *.h set filetype=cpp
@@ -94,6 +99,8 @@ nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 " Unhighlight search results
 nnoremap <Leader>h :nohlsearch<CR>
+" CtrlP find file mode
+nnoremap <Leader>f :CtrlP<CR>
 
 " Menu keybindings
 
@@ -210,6 +217,10 @@ set noerrorbells
 set visualbell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fzf setup
+" CtrlP setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath+=~/opt/fzf
+let g:ctrlp_match_window = 'max:48'
+let g:ctrlp_max_files = 262144
+let g:ctrlp_max_depth = 128
+let g:ctrlp_user_command = ['.git', 'cd /d %s && git ls-files']
+
