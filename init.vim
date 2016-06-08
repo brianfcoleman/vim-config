@@ -101,6 +101,8 @@ nnoremap <Leader>p <C-t>
 nnoremap <Leader>h :nohlsearch<CR>
 " CtrlP find file mode
 nnoremap <Leader>f :CtrlP<CR>
+" CtrlP find buffer mode
+nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " Menu keybindings
 
