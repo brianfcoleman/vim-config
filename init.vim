@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin paths
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath^=$LocalAppData/nvim/bundle/ctrlp.vim,$LocalAppData/nvim/bundle/vim-fugitive,$LocalAppData/nvim/bundle/vim-sneak
+set runtimepath^=$LocalAppData/nvim/bundle/ctrlp.vim,$LocalAppData/nvim/bundle/vim-clang-format,$LocalAppData/nvim/bundle/vim-fugitive,$LocalAppData/nvim/bundle/vim-sneak
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax setup
@@ -210,6 +210,10 @@ endfunction
 
 inoremap <silent> <expr> <CR> SelectCompletion()
 
+" Run clang format
+nnoremap <Leader>c :<C-u>ClangFormat<CR>
+vnoremap <Leader>c :ClangFormat<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bell setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -230,4 +234,17 @@ let g:ctrlp_user_command = ['.git', 'cd /d %s && git ls-files']
 " vim-sneak setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-clang-format setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_format#code_style = "Chromium"
+let g:clang_format#detect_style_file = 0
+let g:clang_format#style_options = {
+\   "IndentWidth": 4,
+\   "TabWidth": 4,
+\   "AccessModifierOffset": -4,
+\   "ColumnLimit": 120,
+\   "BreakBeforeBraces": "Custom",
+\   "BraceWrapping": "{AfterClass: true, AfterControlStatement: false, AfterEnum: false, AfterFunction: true, AfterNamespace: false, AfterObjCDeclaration: false, AfterStruct: true, AfterUnion: true, BeforeCatch: false, BeforeElse: false, IndentBraces: false}"}
 
