@@ -1,4 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin paths
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath^=~/.config/nvim/ctrlp.vim,~/.config/nvim/vim-clang-format,~/.config/nvim/vim-fugitive,~/.fzf
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -94,6 +99,14 @@ nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 " Unhighlight search results
 nnoremap <Leader>h :nohlsearch<CR>
+" Fuzzy file finder
+nnoremap <Leader>f :call fzf#run({'source': 'git ls-files', 'sink': 'e'})<CR>
+nnoremap <Leader>F :FZF<CR>
+" CtrlP find buffer mode
+nnoremap <Leader>b :CtrlPBuffer<CR>
+" Run clang format
+nnoremap <Leader>c :<C-u>ClangFormat<CR>
+vnoremap <Leader>c :ClangFormat<CR>
 
 " Menu keybindings
 
@@ -210,6 +223,16 @@ set noerrorbells
 set visualbell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fzf setup
+" ctrlp.vim setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath+=~/opt/fzf
+let g:ctrlp_match_window = 'max:48'
+let g:ctrlp_max_files = 262144
+let g:ctrlp_max_depth = 128
+let g:ctrlp_user_command = ['.git', 'cd /d %s && git ls-files']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-clang-format setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_format#code_style = "Chromium"
+let g:clang_format#detect_style_file = 0
+

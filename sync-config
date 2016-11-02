@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 rsync -av init.vim $HOME/.config/nvim/init.vim
+rsync -av --exclude .git ctrlp.vim/ $HOME/.config/nvim/ctrlp.vim/
+rsync -av --exclude .git vim-clang-format/ $HOME/.config/nvim/vim-clang-format/
+rsync -av --exclude .git vim-fugitive/ $HOME/.config/nvim/vim-fugitive/
 
