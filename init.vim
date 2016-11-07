@@ -23,8 +23,8 @@ autocmd BufNewFile,BufRead *.jsm set filetype=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set smartindent
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " C++ indentation
@@ -240,11 +240,3 @@ let g:sneak#streak = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clang_format#code_style = "Chromium"
 let g:clang_format#detect_style_file = 0
-let g:clang_format#style_options = {
-\   "IndentWidth": 4,
-\   "TabWidth": 4,
-\   "AccessModifierOffset": -4,
-\   "ColumnLimit": 120,
-\   "BreakBeforeBraces": "Custom",
-\   "BraceWrapping": "{AfterClass: true, AfterControlStatement: false, AfterEnum: false, AfterFunction: true, AfterNamespace: false, AfterObjCDeclaration: false, AfterStruct: true, AfterUnion: true, BeforeCatch: false, BeforeElse: false, IndentBraces: false}"}
-
