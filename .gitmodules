@@ -9,4 +9,4 @@
 	url = git@github.com:justinmk/vim-sneak.git
 [submodule "bundle/vim-clang-format"]
 	path = bundle/vim-clang-format
-	url = git@github.com:rhysd/vim-clang-format.git
+	url = git@github.com:brianfcoleman/vim-clang-format.git
