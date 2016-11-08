@@ -240,3 +240,8 @@ let g:sneak#streak = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clang_format#code_style = "Chromium"
 let g:clang_format#detect_style_file = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color scheme setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme evening
