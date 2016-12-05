@@ -22,18 +22,71 @@ autocmd BufNewFile,BufRead *.jsm set filetype=javascript
 " Indent setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:DefaultIndentation = 4
+let g:Indentation = 0
+autocmd BufEnter * let b:Indentation = 0
+
+function! UpdateIndentation(indentation)
+    let &shiftwidth = a:indentation
+    let &softtabstop = a:indentation
+endfunction
+
+function! OverrideGlobalIndentation(indentation)
+    let g:Indentation = str2nr(a:indentation)
+    call UpdateIndentation(g:Indentation)
+endfunction
+
+function! RemoveGlobalIndentationOverride()
+    let g:Indentation = 0
+endfunction
+
+function! OverrideBufferIndentation(indentation)
+    let b:Indentation = str2nr(a:indentation)
+    call UpdateIndentation(b:Indentation)
+endfunction
+
+function! RemoveBufferIndentationOverride()
+    let b:Indentation = 0
+endfunction
+
+function! GetDefaultIndentation(filetype)
+    let indentationsByFiletype = {
+                \ 'cpp': 2,
+                \ 'py': 2
+                \ }
+    if has_key(indentationsByFiletype, a:filetype)
+        return indentationsByFiletype[a:filetype]
+    else
+        return g:DefaultIndentation
+    endif
+endfunction
+
+function! SetupIndentation(filetype)
+    let indentation = GetDefaultIndentation(a:filetype)
+    if g:Indentation
+        indentation = g:Indentation
+    endif
+    call UpdateIndentation(indentation)
+endfunction
+
+autocmd BufEnter * call SetupIndentation(&filetype)
+
+command! -nargs=1 OverrideGlobalIndentation call OverrideGlobalIndentation(<f-args>)
+command! RemoveGlobalIndentationOverride call RemoveGlobalIndentationOverride()
+command! -nargs=1 OverrideBufferIndentation call OverrideBufferIndentation(<f-args>)
+command! RemoveBufferIndentationOverride call RemoveBufferIndentationOverride()
+command! SetupIndentation call SetupIndentation(&filetype)
+
 set smartindent
-set shiftwidth=4
-set softtabstop=4
 set expandtab
+let &shiftwidth = g:DefaultIndentation
+let &softtabstop = g:DefaultIndentation
 
 " C++ indentation
 function! SetupCppIndentation()
     " Don't indent within a namespace block
     set cino=N-s
     set smartindent
-    set shiftwidth=2
-    set softtabstop=2
     set expandtab
 endfunction
 autocmd BufNewFile,BufRead *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*.cxx call SetupCppIndentation()
@@ -41,8 +94,6 @@ autocmd BufNewFile,BufRead *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*.cxx call SetupC
 " Python indentation
 function! SetupPythonIndentation()
     set smartindent
-    set shiftwidth=2
-    set softtabstop=2
     set expandtab
 endfunction
 autocmd BufNewFile,BufRead *.py call SetupPythonIndentation()
