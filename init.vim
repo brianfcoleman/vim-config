@@ -129,6 +129,8 @@ vnoremap <Leader>c :ClangFormat<CR>
 " A buffer local variable storing the current tab completion mode
 autocmd BufEnter * let b:TabCompleteMode = 0
 
+let g:UseOmniComplete = 0
+
 " When tab is pressed dismiss the current completion menu if it is visible.
 " Cycle between omni-complete, previous match completion and next match
 " completion.
@@ -149,7 +151,7 @@ function! TabComplete()
     let menuVisible = pumvisible()
 
     if menuVisible
-        if hasOmniComplete
+        if hasOmniComplete && g:UseOmniComplete
             if (b:TabCompleteMode == TabCompleteModeOmni)
                 let b:TabCompleteMode = TabCompleteModePrev
                 return dismissMenuAndShowCompleteModePrev
@@ -182,17 +184,20 @@ function! TabComplete()
 
         if isCurrentLineBeforeCursorWhitespace
             return "\<Tab>"
-        elseif hasOmniComplete
+        elseif hasOmniComplete && g:UseOmniComplete
             if (b:TabCompleteMode == TabCompleteModeOmni)
                 let b:TabCompleteMode = TabCompleteModePrev
                 " If we tried to show the omni-complete popup menu but no
                 " completions were available we will still be in omni-complete
                 " mode. We can use <C-e> to exit omni-complete mode in this
                 " case.
-                return dismissMenuAndShowCompleteModePrev
-            else
-                let b:TabCompleteMode = TabCompleteModePrev
                 return showCompleteModePrev
+            elseif (b:TabCompleteMode == TabCompleteModePrev)
+                let b:TabCompleteMode = TabCompleteModeNext
+                return showCompleteModeNext
+            elseif (b:TabCompleteMode == TabCompleteModeNext)
+                let b:TabCompleteMode = TabCompleteModeOmni
+                return showCompleteModeOmni
             endif
         else
             if (b:TabCompleteMode == TabCompleteModeOmni)
@@ -201,13 +206,17 @@ function! TabComplete()
                 " mode. We can use <C-e> to exit omni-complete mode in this
                 " case.
                 let b:TabCompleteMode = TabCompleteModePrev
-                return dismissMenuAndShowCompleteModePrev
-            else
+                return showCompleteModePrev
+            elseif (b:TabCompleteMode == TabCompleteModePrev)
+                let b:TabCompleteMode = TabCompleteModeNext
+                return showCompleteModeNext
+            elseif (b:TabCompleteMode == TabCompleteModeNext)
                 let b:TabCompleteMode = TabCompleteModePrev
                 return showCompleteModePrev
             endif
         endif
     endif
+    return "\<Tab>"
 endfunction
 
 inoremap <silent> <expr> <Tab> TabComplete()
