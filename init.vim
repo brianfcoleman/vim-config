@@ -28,8 +28,24 @@ set softtabstop=4
 set expandtab
 
 " C++ indentation
-" Don't indent within a namespace block
-set cino=N-s
+function! SetupCppIndentation()
+    " Don't indent within a namespace block
+    set cino=N-s
+    set smartindent
+    set shiftwidth=2
+    set softtabstop=2
+    set expandtab
+endfunction
+autocmd BufNewFile,BufRead *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*.cxx call SetupCppIndentation()
+
+" Python indentation
+function! SetupPythonIndentation()
+    set smartindent
+    set shiftwidth=2
+    set softtabstop=2
+    set expandtab
+endfunction
+autocmd BufNewFile,BufRead *.py call SetupPythonIndentation()
 
 " Go indentation
 function! SetupGoIndentation()
