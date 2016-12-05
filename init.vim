@@ -253,4 +253,4 @@ let g:clang_format#detect_style_file = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color scheme setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme evening
+colorscheme darkblue
