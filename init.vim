@@ -64,7 +64,7 @@ endfunction
 function! SetupIndentation(filetype)
     let indentation = GetDefaultIndentation(a:filetype)
     if g:Indentation
-        indentation = g:Indentation
+        let indentation = g:Indentation
     endif
     call UpdateIndentation(indentation)
 endfunction
