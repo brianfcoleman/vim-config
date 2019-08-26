@@ -1,0 +1,3 @@
+[submodule "bundle/nvim-ipy"]
+	path = bundle/nvim-ipy
+	url = https://github.com/bfredl/nvim-ipy.git

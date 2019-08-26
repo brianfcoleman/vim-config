@@ -1,4 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin paths
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath+=~/.config/nvim/bundle/nvim-ipy
+set runtimepath+=~/opt/fzf
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -94,6 +100,8 @@ nnoremap <Leader>G g]
 nnoremap <Leader>p <C-t>
 " Unhighlight search results
 nnoremap <Leader>h :nohlsearch<CR>
+" FZF
+nnoremap <Leader>f :FZF<CR>
 
 " Menu keybindings
 
@@ -209,7 +217,3 @@ inoremap <silent> <expr> <CR> SelectCompletion()
 set noerrorbells
 set visualbell
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fzf setup
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath+=~/opt/fzf

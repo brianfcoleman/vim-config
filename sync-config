@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -euxo pipefail
 
-rsync -av init.vim $HOME/.config/nvim/init.vim
+DRY_RUN=${1:-}
+
+rsync -av $DRY_RUN init.vim $HOME/.config/nvim/init.vim
+rsync -av $DRY_RUN --exclude=.git bundle/ $HOME/.config/nvim/bundle/
 
