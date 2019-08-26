@@ -4,5 +4,6 @@ set -euxo pipefail
 DRY_RUN=${1:-}
 
 rsync -av $DRY_RUN init.vim $HOME/.config/nvim/init.vim
+rsync -av $DRY_RUN colors/ $HOME/.config/nvim/colors/
 rsync -av $DRY_RUN --exclude=.git bundle/ $HOME/.config/nvim/bundle/
 
