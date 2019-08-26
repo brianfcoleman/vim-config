@@ -113,79 +113,23 @@ autocmd BufEnter * let b:TabCompleteMode = 0
 " Cycle between omni-complete, previous match completion and next match
 " completion.
 function! TabComplete()
-    let TabCompleteModeOmni=0
-    let TabCompleteModePrev=1
-    let TabCompleteModeNext=2
-
-    let dismissMenuAndShowCompleteModeOmni = "\<C-e>\<C-x>\<C-o>"
-    let dismissMenuAndShowCompleteModePrev = "\<C-e>\<C-p>"
-    let dismissMenuAndShowCompleteModeNext = "\<C-e>\<C-n>"
-
-    let showCompleteModeOmni = "\<C-x>\<C-o>"
+    let selectNextCompletion = "\<C-n>"
     let showCompleteModePrev = "\<C-p>"
-    let showCompleteModeNext = "\<C-n>"
 
-    let hasOmniComplete = !empty("omnifunc")
     let menuVisible = pumvisible()
 
     if menuVisible
-        if hasOmniComplete
-            if (b:TabCompleteMode == TabCompleteModeOmni)
-                let b:TabCompleteMode = TabCompleteModePrev
-                return dismissMenuAndShowCompleteModePrev
-            elseif (b:TabCompleteMode == TabCompleteModePrev)
-                let b:TabCompleteMode = TabCompleteModeNext
-                return dismissMenuAndShowCompleteModeNext
-            elseif (b:TabCompleteMode == TabCompleteModeNext)
-                let b:TabCompleteMode = TabCompleteModeOmni
-                return dismissMenuAndShowCompleteModeOmni
-            endif
-        else
-            if (b:TabCompleteMode == TabCompleteModeOmni)
-                let b:TabCompleteMode = TabCompleteModePrev
-                return dismissMenuAndShowCompleteModePrev
-            elseif (b:TabCompleteMode == TabCompleteModePrev)
-                let b:TabCompleteMode = TabCompleteModeNext
-                return dismissMenuAndShowCompleteModeNext
-            elseif (b:TabCompleteMode == TabCompleteModeNext)
-                let b:TabCompleteMode = TabCompleteModePrev
-                return dismissMenuAndShowCompleteModePrev
-            endif
-        endif
+        return selectNextCompletion
     else
         let currentLine = getline('.')
         let cursorPosition = col('.')
-        let currentLineBeforeCursor =
-\           strpart(currentLine, 0, (cursorPosition - 1))
-        let isCurrentLineBeforeCursorWhitespace =
-\           (currentLineBeforeCursor =~ '^\s*$')
+        let currentLineBeforeCursor = strpart(currentLine, 0, (cursorPosition - 1))
+        let isCurrentLineBeforeCursorWhitespace = (currentLineBeforeCursor =~ '^\s*$')
 
         if isCurrentLineBeforeCursorWhitespace
             return "\<Tab>"
-        elseif hasOmniComplete
-            if (b:TabCompleteMode == TabCompleteModeOmni)
-                let b:TabCompleteMode = TabCompleteModePrev
-                " If we tried to show the omni-complete popup menu but no
-                " completions were available we will still be in omni-complete
-                " mode. We can use <C-e> to exit omni-complete mode in this
-                " case.
-                return dismissMenuAndShowCompleteModePrev
-            else
-                let b:TabCompleteMode = TabCompleteModePrev
-                return showCompleteModePrev
-            endif
         else
-            if (b:TabCompleteMode == TabCompleteModeOmni)
-                " If we tried to show the omni-complete popup menu but no
-                " completions were available we will still be in omni-complete
-                " mode. We can use <C-e> to exit omni-complete mode in this
-                " case.
-                let b:TabCompleteMode = TabCompleteModePrev
-                return dismissMenuAndShowCompleteModePrev
-            else
-                let b:TabCompleteMode = TabCompleteModePrev
-                return showCompleteModePrev
-            endif
+            return showCompleteModePrev
         endif
     endif
 endfunction
