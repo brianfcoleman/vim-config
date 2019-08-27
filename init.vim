@@ -105,16 +105,10 @@ nnoremap <Leader>h :nohlsearch<CR>
 nnoremap <Leader>f :FZF<CR>
 
 " Menu keybindings
-
-" A buffer local variable storing the current tab completion mode
-autocmd BufEnter * let b:TabCompleteMode = 0
-
-" When tab is pressed dismiss the current completion menu if it is visible.
-" Cycle between omni-complete, previous match completion and next match
-" completion.
 function! TabComplete()
     let selectNextCompletion = "\<C-n>"
     let showCompleteModePrev = "\<C-p>"
+    let tab="\<Tab>"
 
     let menuVisible = pumvisible()
 
@@ -127,11 +121,12 @@ function! TabComplete()
         let isCurrentLineBeforeCursorWhitespace = (currentLineBeforeCursor =~ '^\s*$')
 
         if isCurrentLineBeforeCursorWhitespace
-            return "\<Tab>"
+            return tab
         else
             return showCompleteModePrev
         endif
     endif
+    return tab
 endfunction
 
 inoremap <silent> <expr> <Tab> TabComplete()
