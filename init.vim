@@ -10,8 +10,8 @@ set runtimepath+=~/opt/fzf
 
 filetype plugin indent on
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme zenburn
 
 " C++ header syntax highlighting
 autocmd BufNewFile,BufRead *.h set filetype=cpp
