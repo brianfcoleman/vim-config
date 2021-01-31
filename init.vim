@@ -19,6 +19,8 @@ autocmd BufNewFile,BufRead *.h set filetype=cpp
 autocmd BufNewFile,BufRead *.aidl set filetype=java
 " JavaScript Module syntax hightlighting
 autocmd BufNewFile,BufRead *.jsm set filetype=javascript
+" TypeScript syntax hightlighting
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent setup
